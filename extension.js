@@ -76,6 +76,22 @@ imdb = function (e) {
     });
 }
 
+romantically_apocalyptic = function (e) {
+	
+	var btn = [];
+	
+	if (e == NEXT) {
+		btn = $('a[title="Go to next page"]');
+	} else if (e == PREV) {
+		btn = $('a[title="Go to previous page"]')
+	}
+	
+	if (btn.length > 0) {
+		window.location = btn.attr('href');
+	}
+	
+}
+
 here = window.location.href;
 
 if (here.match(/trekearth.+\/gallery/)) {
@@ -83,7 +99,7 @@ if (here.match(/trekearth.+\/gallery/)) {
     document.body.onkeyup = keyup_dispatcher;
 	keyup_trigger = trekearth;
 	
-} else if (here.match(/https?:\/\/xkcd\.com/)) {
+} else if (here.match(/https?:\/\/(www\.)?xkcd\.com/)) {
 
     document.body.onkeyup = keyup_dispatcher;
 	keyup_trigger = xkcd;
@@ -103,5 +119,9 @@ if (here.match(/trekearth.+\/gallery/)) {
     document.body.onkeyup = keyup_dispatcher;
     keyup_trigger = imdb;
     
-}
+} else if (here.match(/https?:\/\/(www\.)?romanticallyapocalyptic\.com/)) {
+	
+	document.body.onkeyup = keyup_dispatcher;
+    keyup_trigger = romantically_apocalyptic;
 
+}

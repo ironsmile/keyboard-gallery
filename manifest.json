@@ -1,17 +1,18 @@
 {
   "name": "Keyboard Gallery",
-  "version": "0.3",
+  "version": "0.4",
 
   "description": "Adds keyboard prev/next navigation in some gallery sites and comics. Left arrow - back. Right arrow - next",
 
   "content_scripts": [
         {
             "matches": [
-		"http://www.trekearth.com/gallery/*",
-		"http://xkcd.com/*",
-		"http://questionablecontent.net/*",
-		"http://www.giantitp.com/comics/*",
-		"http://www.imdb.com/media/*"
+		"http://*.trekearth.com/gallery/*",
+		"http://*.xkcd.com/*",
+		"http://*.questionablecontent.net/*",
+		"http://*.giantitp.com/comics/*",
+		"http://*.imdb.com/media/*",
+		"http://*.romanticallyapocalyptic.com/*"
 		],
             "js": ["jquery.js", "extension.js"]
         }
